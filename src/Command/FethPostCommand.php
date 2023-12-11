@@ -8,7 +8,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Entity\User;
+use App\Entity\Users;
 use App\Entity\Post;
 
 #[AsCommand(
@@ -56,7 +56,7 @@ class FethPostCommand extends Command
 
         foreach ($usersData as $userData) {
            
-             $user = new User();
+             $user = new Users();
              $user->setName($userData['name']);
              $user->setUsername($userData['username']);
              $user->setEmail($userData['email']);       
