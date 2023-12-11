@@ -19,7 +19,7 @@ class DashboardController extends AbstractController
      /**
      * @Route("/dashboard", name="dashboard")
      */
-    #[Route('/lista', name: 'app_dashboard')]
+    #[Route('/dashboard', name: 'app_dashboard')]
     public function index(): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
