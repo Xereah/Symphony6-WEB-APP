@@ -3,6 +3,11 @@
 {% block title %}Post index{% endblock %}
 
 {% block body %}
+ {% if app.user %}
+    <div class="mb-3 float-end">
+         You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+    </div>
+ {% endif %}
     <h1>Post index</h1>
 
     <table class="table">

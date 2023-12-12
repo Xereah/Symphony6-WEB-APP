@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{# {% block title %}Register{% endblock %}
 
 {% block body %}
     <h1>Register</h1>
@@ -15,5 +15,69 @@
         {{ form_row(registrationForm.agreeTerms) }}
 
         <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    {{ form_end(registrationForm) }} #}
+
+
+
+
+
+
+
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="login-page bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                  <h3 class="mb-3">Register</h3>
+                    <div class="bg-white shadow rounded">
+                        <div class="row">
+                            <div class="col-md-12 pe-0">
+                                <div class="form-left h-100 py-5 px-5">
+                                    {{ form_start(registrationForm) }}
+                                            <div class="col-12">
+                                                
+                                                
+                                                   
+                                                   {{ form_row(registrationForm.email) }}
+                                                
+                                            </div>
+
+                                            <div class="col-12">
+                                               
+                                                <div class="input-group">
+                                                    
+                                                    {{ form_row(registrationForm.plainPassword, {
+                                                        label: 'Password'
+                                                    }) }}
+                                               
+                                            </div>
+                                            {{ form_row(registrationForm.agreeTerms) }}
+                                           
+
+                                            <input type="hidden" name="_csrf_token"
+                                                value="{{ csrf_token('authenticate') }}"
+                                            >
+
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary px-4 float-end mt-4">Register</button>
+                                                  <a href="{{ path('app_login') }}" class="btn">Go to Login</a>
+                                            </div>
+                                           
+                                   {{ form_end(registrationForm) }}
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 {% endblock %}

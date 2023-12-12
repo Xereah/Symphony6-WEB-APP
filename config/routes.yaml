@@ -6,3 +6,6 @@ controllers:
 lista:
     path: /lista
     controller: App\Controller\PostController::index
+homepage:
+    path: /
+    controller: App\Controller\SecurityController::login
